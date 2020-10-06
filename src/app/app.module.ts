@@ -15,8 +15,16 @@ import { GamesComponent } from './games/games.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
-  declarations: [AppComponent, AboutComponent, GamesComponent, ContactComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    AboutComponent,
+    GamesComponent,
+    ContactComponent,
+    HomeComponent,
+  ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
@@ -24,6 +32,7 @@ import { HomeComponent } from './home/home.component';
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireAuthModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,1 +1,23 @@
-<router-outlet></router-outlet>
+<div class="">
+  <a class="" routerLink="/">
+    Home
+  </a>
+</div>
+<div class="">
+  <a class="" routerLink="/about">
+    About
+  </a>
+</div>
+<div class="">
+  <a class="" routerLink="/games">
+    Games
+  </a>
+</div>
+<div class="">
+  <a class="" routerLink="/contact">
+    Contact
+  </a>
+</div>
+<main [@fadeInAnimation]="outlet.isActivated ? outlet.activatedRoute : ''">
+  <router-outlet #outlet="outlet"></router-outlet>
+</main>
