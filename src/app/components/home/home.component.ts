@@ -35,4 +35,8 @@ export class HomeComponent implements OnInit {
     toggle.classList.toggle('active');
     banner.classList.toggle('active');
   }
+
+  getData() {
+    return this.data;
+  }
 }
