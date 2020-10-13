@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
-  selector: 'blublu-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.sass'],
+  selector: 'blublu-about',
+  templateUrl: './about.component.html',
+  styleUrls: ['./about.component.sass']
 })
-export class ContactComponent implements OnInit {
+export class AboutComponent implements OnInit {
   data = {
     name: 'About BluBlu',
     description: 'Information about BluBlu Games staff, goals and work ethics',
@@ -24,5 +24,11 @@ export class ContactComponent implements OnInit {
       { name: 'og:description', content: this.data.description },
       { name: 'og:image', content: this.data.image },
     ]);
+  }
+  toggle() {
+    const toggle = document.querySelector('.toggle');
+    const banner = document.querySelector('.banner');
+    toggle.classList.toggle('active');
+    banner.classList.toggle('active');
   }
 }

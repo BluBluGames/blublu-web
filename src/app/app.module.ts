@@ -7,15 +7,15 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-import { AngularFireAuthModule } from '@angular/fire/auth';
+import { FormsModule } from '@angular/forms';
 
 import { environment } from '../environments/environment';
-import { AboutComponent } from './about/about.component';
-import { GamesComponent } from './games/games.component';
-import { ContactComponent } from './contact/contact.component';
-import { HomeComponent } from './home/home.component';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
+import { WebsitesComponent } from './components/websites/websites.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { GamesComponent } from './components/games/games.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     GamesComponent,
     ContactComponent,
     HomeComponent,
+    WebsitesComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -31,8 +32,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireStorageModule,
-    AngularFireAuthModule,
-    BrowserAnimationsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
