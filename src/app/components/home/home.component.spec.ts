@@ -81,6 +81,18 @@ describe('HomeComponent', () => {
     expect(fixture.nativeElement.querySelector('[data-test="content-box-about-button"]')).toBeTruthy();
   });
 
+  it('should have correct innerHTML about button', () => {
+    const link: HTMLElement = fixture.nativeElement;
+    const about = link.querySelector('[data-test="content-box-about-button"]');
+    expect(about.textContent).toEqual('About');  
+  });
+
+  it('should correctly redirect on about button', () => {
+    const link: HTMLElement = fixture.nativeElement;
+    const hrefAbout = link.querySelector('[data-test="content-box-about-button"]').getAttribute('href');
+    expect(hrefAbout).toEqual('/about');
+  });
+
   it('should show social media menu', () => {
     expect(fixture.nativeElement.querySelector('[data-test="social-media-menu"]')).toBeTruthy();
   });
