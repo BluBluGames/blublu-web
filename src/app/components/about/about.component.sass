@@ -113,23 +113,56 @@ header .logo
   transition: 0.5s
   transform-origin: right
 
-.content .contentBox
+.content .webDevBox
   max-width: 820px
+  padding: 100px 30px 0px 30px
 
-.content .contentBox h2
+.content .webDevBox h2
+  font-size: 4em
+  line-height: 1em
+  color: #fff
+  text-transform: uppercase
+  animation: 0.7s ease-out 0s 1 slideInFromLeft
+
+.content .webDevBox p
+  font-size: 1em
+  color: #fff
+  margin: 20px 0
+  animation: 0.7s ease-out 0s 1 slideInFromLeft
+
+.content .webDevBox a
+  display: inline-block
+  border: 1px solid #fff
+  color: #fff
+  padding: 10px 30px
+  text-transform: uppercase
+  text-decoration: none
+  transition: 0.5s
+  animation: 0.7s ease-out 0s 1 slideInFromLeft
+
+.content .webDevBox a:hover
+  letter-spacing: 4px
+  background: #fff
+  color: #111
+
+.content .gameDevBox
+  max-width: 820px
+  padding: 0px 30px 70px 30px
+
+.content .gameDevBox h2
   font-size: 4em
   line-height: 1em
   color: #fff
   text-transform: uppercase
   animation: 0.7s ease-out 0s 1 slideInFromRight
 
-.content .contentBox p
+.content .gameDevBox p
   font-size: 1em
   color: #fff
   margin: 20px 0
   animation: 0.7s ease-out 0s 1 slideInFromRight
 
-.content .contentBox a
+.content .gameDevBox a
   display: inline-block
   border: 1px solid #fff
   color: #fff
@@ -139,7 +172,7 @@ header .logo
   transition: 0.5s
   animation: 0.7s ease-out 0s 1 slideInFromRight
 
-.content .contentBox a:hover
+.content .gameDevBox a:hover
   letter-spacing: 4px
   background: #fff
   color: #111
@@ -168,6 +201,20 @@ header .logo
   margin-right: 20px
   filter: invert(1)
   transform: scale(0.6)
+
+.languages select
+  background: #00000000
+  color: #ffffff
+  padding: 5px
+  width: 120px
+  height: 30px
+  border: none
+  appearance: none
+  outline: none
+
+.languages select option
+  background: #000000
+  outline: none
 
 // MENU
 .menu
@@ -218,12 +265,15 @@ header .logo
     flex-direction: column-reverse
     margin: 80px 0 0 0
 
-  .content .contentBox
+  .content .webDevBox
     max-width: 100%
+    padding: 0 20px 0 20px
+    margin: 0 0 70px 0
 
-  .content .imageBox img
+  .content .gameDevBox
     min-width: 100%
-    max-width: 300px
+    padding: 0 20px 0 20px
+    margin: 0 0 70px 0
 
   .content .contentBox h2
     font-size: 2.5em

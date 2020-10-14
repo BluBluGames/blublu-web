@@ -17,6 +17,14 @@ import { WebsitesComponent } from './components/websites/websites.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { GamesComponent } from './components/games/games.component';
 
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
+export function HttpLoaderFactory(http: HttpClient){
+  return new TranslateHttpLoader(http);
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +41,14 @@ import { GamesComponent } from './components/games/games.component';
     AngularFirestoreModule,
     AngularFireStorageModule,
     FormsModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+      provide: TranslateLoader,
+      useFactory: HttpLoaderFactory,
+      deps: [HttpClient]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent],
