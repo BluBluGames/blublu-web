@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { HomeComponent } from './home.component';
 
@@ -11,7 +12,8 @@ describe('HomeComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ HomeComponent ],
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        TranslateModule.forRoot(),
       ]
     })
     .compileComponents();
@@ -61,10 +63,10 @@ describe('HomeComponent', () => {
     expect(fixture.nativeElement.querySelector('[data-test="content-box-h2"]')).toBeTruthy();
   });
   
-  it('should have <h2> with correct innerHTML', () => {
+  it('should have <h2> with correct innerHTML translate code', () => {
     const contentBoxParagraph: HTMLElement = fixture.nativeElement;
     const h2 = contentBoxParagraph.querySelector('[data-test="content-box-h2"]');
-    expect(h2.textContent).toEqual('With passion forGames');  
+    expect(h2.textContent).toEqual('home.contentBox-h2');  
   });
 
   it('content-box-p', () => {
@@ -74,7 +76,7 @@ describe('HomeComponent', () => {
   it('should have <p> with correct innerHTML', () => {
     const contentBoxParagraph: HTMLElement = fixture.nativeElement;
     const p = contentBoxParagraph.querySelector('[data-test="content-box-p"]');
-    expect(p.textContent).toEqual('Game Dev? YesWeb Dev? YesPassion? Overwhelming');  
+    expect(p.textContent).toEqual('home.contentBox-p');  
   });
 
   it('content-box-about-button', () => {
@@ -84,7 +86,7 @@ describe('HomeComponent', () => {
   it('should have correct innerHTML about button', () => {
     const link: HTMLElement = fixture.nativeElement;
     const about = link.querySelector('[data-test="content-box-about-button"]');
-    expect(about.textContent).toEqual('About');  
+    expect(about.textContent).toEqual('home.contentBox-button');  
   });
 
   it('should correctly redirect on about button', () => {
@@ -92,6 +94,18 @@ describe('HomeComponent', () => {
     const hrefAbout = link.querySelector('[data-test="content-box-about-button"]').getAttribute('href');
     expect(hrefAbout).toEqual('/about');
   });
+
+  it('should show social language menu', () => {
+    expect(fixture.nativeElement.querySelector('[data-test="languages-menu"]')).toBeTruthy();
+  });
+
+  it('should language menu contain english and polish', () => {
+    expect(fixture.nativeElement.querySelector('[data-test="language-select-english"]')).toBeTruthy();
+    expect(fixture.nativeElement.querySelector('[data-test="language-select-polish"]')).toBeTruthy();
+  });
+
+  // TODO test for showing correct language by default - needs service mock
+  // TODO test for change of language on selecting - needs service mocking
 
   it('should show social media menu', () => {
     expect(fixture.nativeElement.querySelector('[data-test="social-media-menu"]')).toBeTruthy();
@@ -121,15 +135,15 @@ describe('HomeComponent', () => {
   it('should show all menu items with correct innerHTML', () => {
     const link: HTMLElement = fixture.nativeElement;
     const home = link.querySelector('[data-test="menu-item-home"]');
-    expect(home.textContent).toEqual('Home');  
+    expect(home.textContent).toEqual('menu.home');  
     const about = link.querySelector('[data-test="menu-item-about"]');
-    expect(about.textContent).toEqual('About');  
+    expect(about.textContent).toEqual('menu.about');  
     const games = link.querySelector('[data-test="menu-item-games"]');
-    expect(games.textContent).toEqual('Games');  
+    expect(games.textContent).toEqual('menu.games');  
     const websites = link.querySelector('[data-test="menu-item-websites"]');
-    expect(websites.textContent).toEqual('Websites');  
+    expect(websites.textContent).toEqual('menu.websites');  
     const contact = link.querySelector('[data-test="menu-item-contact"]');
-    expect(contact.textContent).toEqual('Contact');  
+    expect(contact.textContent).toEqual('menu.contact');  
   });
 
   it('should routerLink redirect to correct path', () => {
