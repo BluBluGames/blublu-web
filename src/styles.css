@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'JetbrainsMono';
+  src: url("./assets/font/JetBrainsMono-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'JetbrainsMono';
+}
+/*# sourceMappingURL=styles.css.map */

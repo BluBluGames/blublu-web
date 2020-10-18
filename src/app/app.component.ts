@@ -9,12 +9,15 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
   title = 'blublu-web';
+  currentYear: number = new Date().getFullYear();
 
   constructor(public translate: TranslateService) {
     translate.addLangs(['en', 'pl']);
     translate.setDefaultLang('en');
     const browserLanguage = translate.getBrowserLang();
-    const languageToAssign = browserLanguage.match(/en|pl/) ? browserLanguage : 'en';
+    const languageToAssign = browserLanguage.match(/en|pl/)
+      ? browserLanguage
+      : 'en';
     translate.use(languageToAssign);
   }
 }

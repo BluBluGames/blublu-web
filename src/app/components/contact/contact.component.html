@@ -1,1 +1,162 @@
-<p>contact works!</p>
+<section class="banner">
+  <header>
+    <a
+      routerLink="/"
+      class="logo"
+      data-test="logo"
+      [innerHTML]="'home.logo' | translate"
+    ></a>
+    <div class="toggle" (click)="toggle()" click></div>
+  </header>
+  <div class="content">
+    <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" class="form">
+      <div class="contactBox">
+        <h2>Contact Us</h2>
+        <div class="row100">
+          <div class="col">
+            <div class="inputBox">
+              <input
+                #contactEmail="ngModel"
+                [(ngModel)]="email"
+                required
+                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                type="email"
+                name="email"
+                value=""
+              />
+              <span
+                class="text"
+                [innerText]="
+                  contactEmail.invalid &&
+                  (contactEmail.dirty || contactEmail.touched)
+                    ? 'Email is required'
+                    : 'Email'
+                "
+                [ngClass]="{
+                  formInvalid:
+                    contactEmail.invalid &&
+                    (contactEmail.dirty || contactEmail.touched)
+                }"
+              ></span>
+              <span class="line"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row100">
+          <div class="col">
+            <div class="inputBox textarea">
+              <textarea
+                name="message"
+                #contactBody="ngModel"
+                [(ngModel)]="message"
+                required
+                type="text"
+                value=""
+              ></textarea>
+              <span
+                class="text"
+                [innerText]="
+                  contactBody.invalid &&
+                  (contactBody.dirty || contactBody.touched)
+                    ? 'Message is required'
+                    : 'Type your message here'
+                "
+                [ngClass]="{
+                  formInvalid:
+                    contactBody.invalid &&
+                    (contactBody.dirty || contactBody.touched)
+                }"
+              ></span>
+              <span class="line"></span>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="inputBox">
+            <input
+              type="submit"
+              [value]="isMessageSent ? 'Sent! Do it again?' : 'Send Email'"
+            />
+            <span class="text"></span>
+            <span class="line"></span>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <ul class="socialMedia" data-test="social-media-menu">
+    <li>
+      <a
+        href="https://www.facebook.com/BluBlu-Games-100103615217247"
+        data-test="social-media-facebook-link"
+        ><img src="assets/img/facebook.png"
+      /></a>
+    </li>
+    <li>
+      <a href="https://www.instagram.com/blublugames/"
+        ><img
+          src="assets/img/instagram.png"
+          data-test="social-media-instagram-link"
+      /></a>
+    </li>
+    <li>
+      <div class="languages" data-test="languages-menu">
+        <select
+          (change)="setLanguage($event.target.value)"
+          class="language-select"
+          data-test="language-select"
+        >
+          <option
+            value="en"
+            [selected]="currentLanguage === 'en'"
+            data-test="language-select-english"
+            [innerHTML]="'languages.english' | translate"
+          ></option>
+          <option
+            value="pl"
+            [selected]="currentLanguage === 'pl'"
+            data-test="language-select-polish"
+            [innerHTML]="'languages.polish' | translate"
+          ></option>
+        </select>
+      </div>
+    </li>
+  </ul>
+  <ul class="menu" data-test="menu">
+    <li data-test="menu-item">
+      <a
+        routerLink="/"
+        [innerHTML]="'menu.home' | translate"
+        data-test="menu-item-home"
+      ></a>
+    </li>
+    <li data-test="menu-item">
+      <a
+        routerLink="/about"
+        [innerHTML]="'menu.about' | translate"
+        data-test="menu-item-about"
+      ></a>
+    </li>
+    <li data-test="menu-item">
+      <a
+        routerLink="/games"
+        [innerHTML]="'menu.games' | translate"
+        data-test="menu-item-games"
+      ></a>
+    </li>
+    <li data-test="menu-item">
+      <a
+        routerLink="/websites"
+        [innerHTML]="'menu.websites' | translate"
+        data-test="menu-item-websites"
+      ></a>
+    </li>
+    <li data-test="menu-item">
+      <a
+        routerLink="/contact"
+        [innerHTML]="'menu.contact' | translate"
+        data-test="menu-item-contact"
+      ></a>
+    </li>
+  </ul>
+</section>
