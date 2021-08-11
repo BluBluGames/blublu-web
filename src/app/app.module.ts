@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { FormsModule } from '@angular/forms';
 
 import { environment } from '../environments/environment';
@@ -16,12 +17,13 @@ import { AboutComponent } from './components/about/about.component';
 import { WebsitesComponent } from './components/websites/websites.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { GamesComponent } from './components/games/games.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
-export function HttpLoaderFactory(http: HttpClient){
+export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 
@@ -33,6 +35,7 @@ export function HttpLoaderFactory(http: HttpClient){
     ContactComponent,
     HomeComponent,
     WebsitesComponent,
+    NavigationComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -42,13 +45,14 @@ export function HttpLoaderFactory(http: HttpClient){
     AngularFireStorageModule,
     FormsModule,
     HttpClientModule,
+    AngularFireFunctionsModule,
     TranslateModule.forRoot({
       loader: {
-      provide: TranslateLoader,
-      useFactory: HttpLoaderFactory,
-      deps: [HttpClient]
-      }
-    })
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

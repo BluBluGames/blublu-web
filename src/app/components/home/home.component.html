@@ -1,36 +1,71 @@
 <section class="banner">
   <header data-test="header">
-    <a routerLink="/" class="logo" [innerHTML]="'home.logo' | translate" data-test="logo"></a>
+    <a
+      routerLink="/"
+      class="logo"
+      [innerHTML]="'home.logo' | translate"
+      data-test="logo"
+    ></a>
     <div class="toggle" (click)="toggle()" data-test="toggle"></div>
   </header>
 
   <div class="content" data-test="content">
     <div class="contentBox" data-test="content-box">
-      <h2 data-test="content-box-h2" [innerHTML]="'home.contentBox-h2' | translate"></h2>
-      <p data-test="content-box-p" [innerHTML]="'home.contentBox-p' | translate"></p>
-      <a routerLink="/about" [innerHTML]="'home.contentBox-button' | translate" data-test="content-box-about-button"></a>
+      <h2
+        data-test="content-box-h2"
+        [innerHTML]="'home.contentBox-h2' | translate"
+      ></h2>
+      <p
+        data-test="content-box-p"
+        [innerHTML]="'home.contentBox-p' | translate"
+      ></p>
+      <a
+        routerLink="/about"
+        [innerHTML]="'home.contentBox-button' | translate"
+        data-test="content-box-about-button"
+      ></a>
     </div>
     <div class="imageBox" data-test="imageBox">
-      <img src="assets/img/blublu-logo-500-500.png" alt="">
+      <img src="assets/img/blublu-logo-500-500.png" alt="" />
     </div>
   </div>
   <ul class="socialMedia" data-test="social-media-menu">
-    <li><a href="https://www.facebook.com/BluBlu-Games-100103615217247" data-test="social-media-facebook-link"><img src="assets/img/facebook.png"></a></li>
-    <li><a href="https://www.instagram.com/blublugames/" data-test="social-media-instagram-link"><img src="assets/img/instagram.png"></a></li>
+    <li>
+      <a
+        href="https://www.facebook.com/BluBlu-Games-100103615217247"
+        data-test="social-media-facebook-link"
+        ><img src="assets/img/facebook.png"
+      /></a>
+    </li>
+    <li>
+      <a
+        href="https://www.instagram.com/blublugames/"
+        data-test="social-media-instagram-link"
+        ><img src="assets/img/instagram.png"
+      /></a>
+    </li>
     <li>
       <div class="languages" data-test="languages-menu">
-        <select (change)="setLanguage($event.target.value)" class="language-select" data-test="language-select">
-          <option value="en" [selected]="currentLanguage==='en'" data-test="language-select-english" [innerHTML]="'languages.english' | translate"></option>
-          <option value="pl" [selected]="currentLanguage==='pl'" data-test="language-select-polish" [innerHTML]="'languages.polish' | translate"></option>
+        <select
+          (change)="setLanguage($event.target.value)"
+          class="language-select"
+          data-test="language-select"
+        >
+          <option
+            value="en"
+            [selected]="currentLanguage === 'en'"
+            data-test="language-select-english"
+            [innerHTML]="'languages.english' | translate"
+          ></option>
+          <option
+            value="pl"
+            [selected]="currentLanguage === 'pl'"
+            data-test="language-select-polish"
+            [innerHTML]="'languages.polish' | translate"
+          ></option>
         </select>
       </div>
     </li>
   </ul>
-  <ul class="menu" data-test="menu">
-    <li data-test="menu-item"><a routerLink="/" [innerHTML]="'menu.home' | translate" data-test="menu-item-home"></a></li>
-    <li data-test="menu-item"><a routerLink="/about" [innerHTML]="'menu.about' | translate" data-test="menu-item-about"></a></li>
-    <li data-test="menu-item"><a routerLink="/games" [innerHTML]="'menu.games' | translate" data-test="menu-item-games"></a></li>
-    <li data-test="menu-item"><a routerLink="/websites" [innerHTML]="'menu.websites' | translate" data-test="menu-item-websites"></a></li>
-    <li data-test="menu-item"><a routerLink="/contact" [innerHTML]="'menu.contact' | translate" data-test="menu-item-contact"></a></li>
-  </ul>
+  <blublu-navigation class="menu"></blublu-navigation>
 </section>

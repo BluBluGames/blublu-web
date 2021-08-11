@@ -1,1 +1,82 @@
-<p>websites works!</p>
+<section class="banner">
+  <header data-test="header">
+    <a
+      routerLink="/"
+      class="logo"
+      [innerHTML]="'home.logo' | translate"
+      data-test="logo"
+    ></a>
+    <div class="toggle" (click)="toggle()" data-test="toggle"></div>
+  </header>
+
+  <div class="content" data-test="content">
+    <div class="carousel">
+      <div class="carousel-image">
+        <img src="assets/img/img1.jpg" alt="" class="carousel-img active" />
+        <img src="assets/img/img2.jpg" alt="" class="carousel-img" />
+      </div>
+      <div class="carousel-text">
+        <div class="active slide-text">
+          <h2>Slide 1</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor quod
+            cum ad expedita eos soluta minima. Quidem ex reprehenderit cumque
+            minus magni sed explicabo.
+          </p>
+        </div>
+        <div class="slide-text">
+          <h2>Slide 2</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor quod
+            cum ad expedita eos soluta minima. Quidem ex reprehenderit cumque
+            minus magni sed explicabo.
+          </p>
+        </div>
+      </div>
+
+      <ul class="controls">
+        <li (click)="nextSlide()"></li>
+        <li (click)="previousSlide()"></li>
+      </ul>
+    </div>
+  </div>
+  <ul class="socialMedia" data-test="social-media-menu">
+    <li>
+      <a
+        href="https://www.facebook.com/BluBlu-Games-100103615217247"
+        data-test="social-media-facebook-link"
+        ><img src="assets/img/facebook.png"
+      /></a>
+    </li>
+    <li>
+      <a
+        href="https://www.instagram.com/blublugames/"
+        data-test="social-media-instagram-link"
+        ><img src="assets/img/instagram.png"
+      /></a>
+    </li>
+    <li>
+      <div class="languages" data-test="languages-menu">
+        <select
+          (change)="setLanguage($event.target.value)"
+          class="language-select"
+          data-test="language-select"
+        >
+          <option
+            value="en"
+            [selected]="currentLanguage === 'en'"
+            data-test="language-select-english"
+            [innerHTML]="'languages.english' | translate"
+          ></option>
+          <option
+            value="pl"
+            [selected]="currentLanguage === 'pl'"
+            data-test="language-select-polish"
+            [innerHTML]="'languages.polish' | translate"
+          ></option>
+        </select>
+      </div>
+    </li>
+  </ul>
+  <blublu-navigation class="menu"></blublu-navigation>
+</section>

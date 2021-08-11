@@ -35,8 +35,10 @@ export class HomeComponent implements OnInit {
   toggle() {
     const toggle = document.querySelector('.toggle');
     const banner = document.querySelector('.banner');
+    const test = document.querySelector('.isToggledTest');
     toggle.classList.toggle('active');
     banner.classList.toggle('active');
+    test.classList.toggle('active');
   }
 
   getData() {

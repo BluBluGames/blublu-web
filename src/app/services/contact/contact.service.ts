@@ -15,7 +15,7 @@ export class ContactService {
   constructor(private http: HttpClient) {}
 
   sendMail(message: ContactMessage) {
-    let url = 'http://localhost:5001/blublu-web/us-central1/sendMail';
+    let url = 'https://us-central1-blublu-web.cloudfunctions.net/emailMessage';
 
     this.http
       .post(

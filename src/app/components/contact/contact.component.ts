@@ -77,7 +77,8 @@ export class ContactComponent implements OnInit {
       //show error
     } else {
       //add
-      this.contact.sendMail(value);
+      // this.contact.sendMail(value);
+      this.sendMail(value);
       this.clearForm();
       //show message
     }
