@@ -1,0 +1,27 @@
+{
+  "home": {
+    "logo": "BluBlu Games",
+    "contentBox-button": "O Nas",
+    "contentBox-h2": "Z pasji do<br>Gier",
+    "contentBox-p": "Game Dev? Tak<br>Web Dev? Tak<br>Pasja? Przytłaczająca!"
+  },
+  "menu": {
+    "home": "Strona główna",
+    "about": "O nas",
+    "games": "Gry",
+    "websites": "Strony internetowe",
+    "contact": "Kontakt"
+  },
+  "languages": {
+    "english": "angielski (en)",
+    "polish": "polski (pl)"
+  },
+  "about": {
+    "gameDevTitle":"Gry",
+    "gameDevText":"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum veniam maiores vitae facilis est eos eveniet, aut omnis quidem soluta eligendi illo blanditiis quasi! Rem magni aliquid cum voluptates veniam?",
+    "gameDevButton":"Zobacz Gry",
+    "webDevTitle":"Strony",
+    "webDevText":"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum veniam maiores vitae facilis est eos eveniet, aut omnis quidem soluta eligendi illo blanditiis quasi! Rem magni aliquid cum voluptates veniam?",
+    "webDevButton":"Zobacz Strony"
+  }
+}

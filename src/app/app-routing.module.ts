@@ -5,6 +5,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { GamesComponent } from './components/games/games.component';
 import { HomeComponent } from './components/home/home.component';
 import { WebsitesComponent } from './components/websites/websites.component';
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'games', component: GamesComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'websites', component: WebsitesComponent },
+  { path: 'privacy-policy', component: PrivacyPolicyComponent },
 ];
 
 @NgModule({
