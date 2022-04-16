@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
+import { TranslatorService } from 'src/app/services/i18n/translator.service';
 
 @Component({
   selector: 'blublu-privacy-policy',
@@ -12,9 +13,9 @@ export class PrivacyPolicyComponent implements OnInit {
     description: 'Information about BluBlu Games privacy policy',
     image: 'avatar.png',
   };
+  currentLanguage: string;
 
-  constructor(private title: Title, private meta: Meta) {}
-
+  constructor(private title: Title, private meta: Meta, private translator: TranslatorService) {}
 
   ngOnInit(): void {
         this.title.setTitle(this.data.name);
@@ -27,4 +28,25 @@ export class PrivacyPolicyComponent implements OnInit {
           ]);
   }
 
+  toggle() {
+    const toggle = document.querySelector('.toggle');
+    const banner = document.querySelector('.banner');
+    const test = document.querySelector('.isToggledTest');
+    toggle.classList.toggle('active');
+    banner.classList.toggle('active');
+    test.classList.toggle('active');
+  }
+
+  getData() {
+    return this.data;
+  }
+
+  setLanguage(language: string) {
+    this.translator.setLanguage(language);
+    this.getCurrentLanguage();
+  }
+
+  getCurrentLanguage() {
+    this.currentLanguage = this.translator.getCurrentLanguage();
+  }
 }

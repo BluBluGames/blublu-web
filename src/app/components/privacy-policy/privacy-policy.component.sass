@@ -105,7 +105,7 @@ header .logo
 .content
   position: relative
   z-index: 2
-  padding: 0 100px 0 100px
+  padding: 100px 400px 100px 400px
   width: 100%
   display: flex
   justify-content: space-between
@@ -113,23 +113,30 @@ header .logo
   transition: 0.5s
   transform-origin: right
 
-.content .contentBox
-  width: 600px
-
-.content .contentBox h2
-  font-size: 4em
+.content h3
+  font-size: 1.3em
   line-height: 1em
   color: #fff
   text-transform: uppercase
-  animation: 0.7s ease-out 0s 1 slideInFromRight
+  animation: 0.7s ease-out 0s 1 slideInFromLeft
+  padding: 30px 0 5px 0
 
-.content .contentBox p
+.content h2
+  font-size: 3em
+  line-height: 1em
+  color: #fff
+  text-transform: uppercase
+  animation: 0.7s ease-out 0s 1 slideInFromLeft
+  padding-bottom: 40px
+
+.content p
   font-size: 1em
   color: #fff
   margin: 20px 0
   animation: 0.7s ease-out 0s 1 slideInFromRight
+  text-align: justify
 
-.content .contentBox a
+.content a
   display: inline-block
   border: 1px solid #fff
   color: #fff
@@ -139,15 +146,10 @@ header .logo
   transition: 0.5s
   animation: 0.7s ease-out 0s 1 slideInFromRight
 
-.content .contentBox a:hover
+.content a:hover
   letter-spacing: 4px
   background: #fff
   color: #111
-
-.content .imageBox img
-  max-width: 100%
-  min-width: 400px
-  animation: 0.7s ease-out 0s 1 slideInFromLeft
 
 // SOCIAL MEDIA
 .socialMedia
