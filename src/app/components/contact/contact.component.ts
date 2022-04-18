@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
-import { ContactService } from 'src/app/services/contact/contact.service';
 import { TranslatorService } from 'src/app/services/i18n/translator.service';
 import { ContactMessage } from './contact-message';
 
@@ -37,7 +36,6 @@ export class ContactComponent implements OnInit {
     private title: Title,
     private meta: Meta,
     private translator: TranslatorService,
-    private contact: ContactService
   ) {}
 
   ngOnInit(): void {
@@ -85,7 +83,6 @@ export class ContactComponent implements OnInit {
   }
 
   sendMail(message) {
-    this.contact.sendMail(message);
   }
 
   clearForm() {
