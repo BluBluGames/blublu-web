@@ -10,6 +10,9 @@
       "firebase.json",
       ".firebaserc",
       "**/.*",
+      ".firebase/**",
+      ".github/**",
+      ".git/**",
       "**/node_modules/**",
       "studio-strategy/**",
       "tools/**",
@@ -23,15 +26,30 @@
     "headers": [
       {
         "source": "**/*.@(webp|png|jpg|jpeg|svg|ico)",
-        "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
       },
       {
         "source": "**/*.@(css|js)",
-        "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600" }]
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=3600"
+          }
+        ]
       },
       {
         "source": "**/*.@(html|webmanifest)",
-        "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }]
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=0, must-revalidate"
+          }
+        ]
       }
     ]
   },
