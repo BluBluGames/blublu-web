@@ -12,9 +12,11 @@ up to `5032192`.
 - `index.html` — the whole landing page (services / work / process / stores / contact, plus a `<dialog>` lightbox)
 - `privacy-policy.html` — privacy policy subpage
 - `styles.css`, `script.js` — vanilla CSS and JS (footer year + portfolio lightbox)
-- `assets/portfolio/` — full-size masters, only fetched by the lightbox
-- `assets/portfolio/thumbs/`, `assets/hero/hero-img-*.webp` — generated, see **Images** below
+- `404.html` — branded not-found page (Firebase serves it automatically)
+- `assets/portfolio/*.webp` — near-lossless masters. Sources only; **not deployed**
+- `assets/portfolio/thumbs/`, `assets/hero/hero-img-*` — generated AVIF + WebP, see **Images**
 - `assets/icons/`, `site.webmanifest` — favicons and PWA manifest
+- `assets/og-card.jpg` — 1200x630 social card
 - `tools/generate-images.py` — regenerates everything under `thumbs/` and the hero variants
 - `firestore.rules`, `storage.rules`, `firestore.indexes.json` — rules for the project's
   database and bucket. The current site does not use either (the contact CTA is a `mailto:`
@@ -34,26 +36,38 @@ does not resolve extension-less paths. `npx serve` matches Firebase's behaviour 
 
 ## Images
 
-The portfolio masters are near-lossless 2400x1350 WebP files of 1–3.5 MB each. The page never
-loads them: the grid uses generated 640w/1280w thumbnails via `srcset`, and the lightbox offers
-the browser both the 1280w thumbnail and the master, so the master is only fetched on a display
-dense enough to resolve it. Typical desktop first load is ~390 KB instead of ~17 MB.
+Nothing the page loads is a hand-made file. The masters in `assets/portfolio/` are
+near-lossless 2400x1350 WebP (0.7-3.4 MB each) and are **excluded from the deploy** -
+`tools/generate-images.py` derives everything served, in AVIF with a WebP fallback:
+
+| tier | width | used by |
+| --- | --- | --- |
+| grid | 640w, 1280w | portfolio tiles (`srcset`) |
+| lightbox | 1280w, 2000w | the dialog, composed in JS from `data-stem` |
+| hero | 1280w, 1920w, 2560w | full-bleed hero, the LCP element |
+
+Widths follow how the page *paints*, not the source size. `object-fit: cover` against a
+fixed tile height means a tile paints 462px wide (960px featured), and the lightbox is
+capped at `min(96vw, 1000px)` - so 2000px is everything a 2x display can resolve and the
+masters can never be needed at runtime.
+
+Result: ~300 KB for a first desktop visit, and 0.73 MB even if someone opens all eight
+images in the lightbox on a retina screen. Before this the page served ~17 MB per visit.
 
 After adding or replacing anything in `assets/portfolio/`:
 
 ```bash
-pip install Pillow
+pip install Pillow          # ffmpeg with libaom-av1 is needed for the AVIF pass
 python tools/generate-images.py
+python tools/generate-images.py --webp-only    # skip AVIF when iterating
 ```
 
-Then add a matching `<button class="portfolio-item">` in `index.html`, following an existing one —
-`data-full` points at the master, `data-thumb` at the 1280w thumbnail, and `srcset`/`sizes` at the
-generated pair. `sizes` describes the *painted* width, which is wider than the tile because
-`object-fit: cover` crops against a fixed tile height (462px for a regular tile, 960px for the
-featured one).
+Then copy an existing `<button class="portfolio-item">` in `index.html`: `data-stem` is the
+path prefix under `thumbs/` and the two `<source>` elements carry the AVIF/WebP srcsets.
+Re-run the sitemap image block too (it lists the 2000w files).
 
-`assets/hero/hero-img.webp` is the 2560px hero master. It is in the `ignore` list in
-`firebase.json` so it is kept in the repo for re-encoding but never served.
+`assets/hero/hero-img.webp` is the 2560px hero master, kept in the repo for re-encoding and
+ignored by hosting.
 
 ## Deploy
 
@@ -75,11 +89,24 @@ firebase deploy --only hosting             # production
 `firebase deploy` on its own would also push `firestore.rules` and `storage.rules`, so prefer
 `--only hosting` unless you mean to change those.
 
+## SEO and sharing
+
+- `index.html` carries Open Graph + Twitter card meta pointing at `assets/og-card.jpg`
+  (1200x630 JPEG - social crawlers are unreliable with AVIF/WebP), and a JSON-LD `@graph`
+  with `Organization` (incl. `sameAs` for every storefront and social profile),
+  `WebSite`, `WebPage`, and an `OfferCatalog` mirroring the four pricing tiers.
+- **If a tier price or name changes in the page, change it in the JSON-LD too.** Structured
+  data that contradicts the visible page is a manual-action risk, not just a missed
+  opportunity.
+- `sitemap.xml` includes image entries for the eight portfolio renders, which is how a 3D
+  studio earns Google Images traffic. It is generated from the page's own `data-stem` /
+  `data-caption` attributes, so regenerate it when the gallery changes.
+- `404.html` is `noindex, follow`.
+
 ## Notes
 
 - After attaching a custom domain, update the URLs in `robots.txt`, `sitemap.xml`, and the
   `og:url` / `og:image` / canonical / JSON-LD tags in `index.html`.
-- There is no `404.html`, so unknown paths fall back to Firebase's generic error page.
 - Hosting `headers` rules match the *request* path, not the file on disk. Because `cleanUrls`
   is on, visitors request `/` and `/privacy-policy`, which do not match `**/*.html` - so each
   page needs its own no-cache rule in `firebase.json`. Add one when adding a page, or it will

@@ -20,12 +20,13 @@
       "firestore.indexes.json",
       "storage.rules",
       "README.md",
-      "assets/hero/hero-img.webp"
+      "assets/hero/hero-img.webp",
+      "assets/portfolio/*.webp"
     ],
     "cleanUrls": true,
     "headers": [
       {
-        "source": "**/*.@(webp|png|jpg|jpeg|svg|ico)",
+        "source": "**/*.@(avif|webp|png|jpg|jpeg|svg|ico)",
         "headers": [
           {
             "key": "Cache-Control",

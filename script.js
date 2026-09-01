@@ -9,12 +9,22 @@ const lightbox = document.querySelector("#lightbox");
 
 if (lightbox && galleryItems.length > 0) {
   const image = lightbox.querySelector("[data-lightbox-image]");
+  const avifSource = lightbox.querySelector("[data-lightbox-avif]");
+  const webpSource = lightbox.querySelector("[data-lightbox-webp]");
   const title = lightbox.querySelector("[data-lightbox-title]");
   const category = lightbox.querySelector("[data-lightbox-category]");
   const closeButton = lightbox.querySelector("[data-lightbox-close]");
   const prevButton = lightbox.querySelector("[data-lightbox-prev]");
   const nextButton = lightbox.querySelector("[data-lightbox-next]");
   let currentIndex = 0;
+
+  // The dialog is capped at min(96vw, 1000px), so 2000px is everything a 2x
+  // display can resolve and the 1280w file the grid already cached covers 1x.
+  // The full-size masters are never served.
+  const LIGHTBOX_SIZES = "min(96vw, 1000px)";
+  const widths = [1280, 2000];
+  const srcsetFor = (stem, ext) =>
+    widths.map((w) => `${stem}-${w}.${ext} ${w}w`).join(", ");
 
   const renderItem = (index) => {
     const item = galleryItems[index];
@@ -23,20 +33,24 @@ if (lightbox && galleryItems.length > 0) {
       return;
     }
 
-    const full = item.dataset.full || "";
-    const thumb = item.dataset.thumb || "";
+    const stem = item.dataset.stem || "";
 
-    // The lightbox is capped at 1000px wide, which the cached 1280w thumbnail already
-    // covers on a 1x display. Offering both lets the browser skip the multi-megabyte
-    // original unless the screen is dense enough to actually resolve it.
-    if (thumb && full) {
-      image.sizes = "min(96vw, 1000px)";
-      image.srcset = thumb + " 1280w, " + full + " 2400w";
-    } else {
-      image.removeAttribute("srcset");
+    if (stem) {
+      // Sources first: the <img> re-runs source selection when these change,
+      // and setting them after src would download the fallback needlessly.
+      if (avifSource) {
+        avifSource.sizes = LIGHTBOX_SIZES;
+        avifSource.srcset = srcsetFor(stem, "avif");
+      }
+      if (webpSource) {
+        webpSource.sizes = LIGHTBOX_SIZES;
+        webpSource.srcset = srcsetFor(stem, "webp");
+      }
+      image.sizes = LIGHTBOX_SIZES;
+      image.srcset = srcsetFor(stem, "webp");
+      image.src = `${stem}-1280.webp`;
     }
 
-    image.src = full || thumb;
     image.alt = item.querySelector("img")?.alt || "";
     title.textContent = item.dataset.caption || "";
     category.textContent = item.dataset.category || "";

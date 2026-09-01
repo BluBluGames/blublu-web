@@ -22,32 +22,172 @@
       property="og:description"
       content="Commission low poly and stylized 3D assets for games: props, plants, modular kits, and full environments built for Unity and Unreal."
     />
-    <meta property="og:image" content="https://blublu-web.web.app/assets/hero/hero-img-1920.webp" />
+    <meta property="og:image" content="https://blublu-web.web.app/assets/og-card.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Stylized fantasy ruins environment with stone props, plants, and glowing rune details"
+    />
+    <meta property="og:site_name" content="BluBluGames" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:url" content="https://blublu-web.web.app/" />
     <link rel="canonical" href="https://blublu-web.web.app/" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@BluBluGame" />
+    <meta name="twitter:creator" content="@BluBluGame" />
+    <meta
+      name="twitter:title"
+      content="BluBluGames | Custom Low Poly and Stylized 3D Assets for Indie Games"
+    />
+    <meta
+      name="twitter:description"
+      content="Commission low poly and stylized 3D assets for games: props, plants, modular kits, and full environments built for Unity and Unreal."
+    />
+    <meta name="twitter:image" content="https://blublu-web.web.app/assets/og-card.jpg" />
+    <meta
+      name="twitter:image:alt"
+      content="Stylized fantasy ruins environment with stone props, plants, and glowing rune details"
+    />
     <link rel="icon" href="/assets/icons/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png" />
     <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#080b0a" />
+    <link
+      rel="preload"
+      as="image"
+      type="image/avif"
+      imagesrcset="assets/hero/hero-img-1280.avif 1280w, assets/hero/hero-img-1920.avif 1920w, assets/hero/hero-img-2560.avif 2560w"
+      imagesizes="100vw"
+    />
     <link rel="stylesheet" href="styles.css" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "BluBluGames",
-        "url": "https://blublu-web.web.app/",
-        "logo": "https://blublu-web.web.app/assets/icons/blublu-logo-512.png",
-        "description": "Indie 3D asset studio creating custom low poly and stylized assets for games.",
-        "areaServed": "Worldwide",
-        "serviceType": [
-          "Custom 3D asset commissions",
-          "Low poly game assets",
-          "Stylized 3D environments",
-          "Modular kits",
-          "Plants and foliage"
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://blublu-web.web.app/#organization",
+            "name": "BluBluGames",
+            "url": "https://blublu-web.web.app/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://blublu-web.web.app/assets/icons/blublu-logo-512.png",
+              "width": 512,
+              "height": 512
+            },
+            "image": "https://blublu-web.web.app/assets/og-card.jpg",
+            "description": "Indie 3D asset studio creating custom low poly and stylized assets for games: props, plants, modular kits, and full environments for Unity and Unreal.",
+            "email": "blublu.main@gmail.com",
+            "areaServed": {
+              "@type": "Place",
+              "name": "Worldwide"
+            },
+            "sameAs": [
+              "https://assetstore.unity.com/publishers/83313",
+              "https://www.fab.com/sellers/BluBluGames",
+              "https://blublu-games.itch.io/",
+              "https://www.youtube.com/@BluBlu_Games",
+              "https://x.com/BluBluGame"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "sales",
+              "email": "blublu.main@gmail.com",
+              "availableLanguage": [
+                "English",
+                "Polish"
+              ]
+            },
+            "knowsAbout": [
+              "Low poly 3D modelling",
+              "Stylized environment art",
+              "Modular asset kits",
+              "Unity",
+              "Unreal Engine"
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Custom 3D asset commissions",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "name": "Small pack",
+                  "description": "Up to 5 assets. A fast test, placeholder replacement, or a tight polish pass.",
+                  "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "minPrice": 100,
+                    "priceCurrency": "USD",
+                    "valueAddedTaxIncluded": false
+                  },
+                  "availability": "https://schema.org/InStock"
+                },
+                {
+                  "@type": "Offer",
+                  "name": "Starter environment pack",
+                  "description": "Up to 24-35 mixed assets. Early environments, prototypes, or a Kickstarter-ready area.",
+                  "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "minPrice": 600,
+                    "priceCurrency": "USD",
+                    "valueAddedTaxIncluded": false
+                  },
+                  "availability": "https://schema.org/InStock"
+                },
+                {
+                  "@type": "Offer",
+                  "name": "Mid-size environment pack",
+                  "description": "Up to 60-80 mixed assets. A demo area, vertical slice, or fuller location set.",
+                  "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "minPrice": 1500,
+                    "priceCurrency": "USD",
+                    "valueAddedTaxIncluded": false
+                  },
+                  "availability": "https://schema.org/InStock"
+                },
+                {
+                  "@type": "Offer",
+                  "name": "Large commission pack",
+                  "description": "Up to 140-200 mixed assets. Funded teams, campaign builds, larger production scopes.",
+                  "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "minPrice": 3200,
+                    "priceCurrency": "USD",
+                    "valueAddedTaxIncluded": false
+                  },
+                  "availability": "https://schema.org/InStock"
+                }
+              ]
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://blublu-web.web.app/#website",
+            "url": "https://blublu-web.web.app/",
+            "name": "BluBluGames",
+            "inLanguage": "en",
+            "publisher": {
+              "@id": "https://blublu-web.web.app/#organization"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://blublu-web.web.app/#webpage",
+            "url": "https://blublu-web.web.app/",
+            "name": "BluBluGames | Custom Low Poly and Stylized 3D Assets for Indie Games",
+            "isPartOf": {
+              "@id": "https://blublu-web.web.app/#website"
+            },
+            "about": {
+              "@id": "https://blublu-web.web.app/#organization"
+            },
+            "primaryImageOfPage": "https://blublu-web.web.app/assets/og-card.jpg",
+            "inLanguage": "en"
+          }
         ]
       }
     </script>
@@ -71,22 +211,20 @@
 
     <main id="main">
       <section class="hero" id="top" aria-labelledby="hero-title">
-        <img
-          class="hero-art"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
-          width="2560"
-          height="1440"
-          src="assets/hero/hero-img-1920.webp"
-          srcset="
-            assets/hero/hero-img-1280.webp 1280w,
-            assets/hero/hero-img-1920.webp 1920w,
-            assets/hero/hero-img-2560.webp 2560w
-          "
-          sizes="100vw"
-          alt="Stylized fantasy ruins environment with stone props, plants, and glowing rune details"
-        />
+        <picture>
+          <source type="image/avif" srcset="assets/hero/hero-img-1280.avif 1280w, assets/hero/hero-img-1920.avif 1920w, assets/hero/hero-img-2560.avif 2560w" sizes="100vw" />
+          <source type="image/webp" srcset="assets/hero/hero-img-1280.webp 1280w, assets/hero/hero-img-1920.webp 1920w, assets/hero/hero-img-2560.webp 2560w" sizes="100vw" />
+          <img
+            class="hero-art"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            width="2560"
+            height="1440"
+            src="assets/hero/hero-img-1920.webp"
+            alt="Stylized fantasy ruins environment with stone props, plants, and glowing rune details"
+          />
+        </picture>
         <div class="hero-overlay"></div>
         <div class="hero-content">
           <p class="eyebrow">Custom 3D asset commissions for indie games</p>
@@ -147,21 +285,30 @@
               type="button"
               class="portfolio-item featured"
               data-lightbox-item
-              data-full="assets/portfolio/stylized-environment-sample1.webp"
-              data-thumb="assets/portfolio/thumbs/stylized-environment-sample1-1280.webp"
+              data-stem="assets/portfolio/thumbs/stylized-environment-sample1"
               data-caption="Stylized environment sample 1"
               data-category="Stylized environment"
             >
-              <img
-                loading="lazy"
-                decoding="async"
-                width="1280"
-                height="720"
-                src="assets/portfolio/thumbs/stylized-environment-sample1-640.webp"
-                srcset="assets/portfolio/thumbs/stylized-environment-sample1-640.webp 640w, assets/portfolio/thumbs/stylized-environment-sample1-1280.webp 1280w"
-                sizes="(max-width: 620px) 640px, 960px"
-                alt="Stylized environment sample 1 with fantasy ruins, foliage, and glowing props"
-              />
+              <picture>
+                <source
+                  type="image/avif"
+                  srcset="assets/portfolio/thumbs/stylized-environment-sample1-640.avif 640w, assets/portfolio/thumbs/stylized-environment-sample1-1280.avif 1280w"
+                  sizes="(max-width: 620px) 640px, 960px"
+                />
+                <source
+                  type="image/webp"
+                  srcset="assets/portfolio/thumbs/stylized-environment-sample1-640.webp 640w, assets/portfolio/thumbs/stylized-environment-sample1-1280.webp 1280w"
+                  sizes="(max-width: 620px) 640px, 960px"
+                />
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  width="1280"
+                  height="720"
+                  src="assets/portfolio/thumbs/stylized-environment-sample1-640.webp"
+                  alt="Stylized environment sample 1 with fantasy ruins, foliage, and glowing props"
+                />
+              </picture>
               <span>
                 <strong>Stylized environment sample 1</strong>
                 <small>Stylized environment</small>
@@ -171,21 +318,30 @@
               type="button"
               class="portfolio-item"
               data-lightbox-item
-              data-full="assets/portfolio/stylized-environment-sample2.webp"
-              data-thumb="assets/portfolio/thumbs/stylized-environment-sample2-1280.webp"
+              data-stem="assets/portfolio/thumbs/stylized-environment-sample2"
               data-caption="Stylized environment sample 2"
               data-category="Stylized environment"
             >
-              <img
-                loading="lazy"
-                decoding="async"
-                width="1280"
-                height="720"
-                src="assets/portfolio/thumbs/stylized-environment-sample2-640.webp"
-                srcset="assets/portfolio/thumbs/stylized-environment-sample2-640.webp 640w, assets/portfolio/thumbs/stylized-environment-sample2-1280.webp 1280w"
-                sizes="(max-width: 620px) 427px, 462px"
-                alt="Stylized environment sample 2 with moody lighting and game-ready scenery"
-              />
+              <picture>
+                <source
+                  type="image/avif"
+                  srcset="assets/portfolio/thumbs/stylized-environment-sample2-640.avif 640w, assets/portfolio/thumbs/stylized-environment-sample2-1280.avif 1280w"
+                  sizes="(max-width: 620px) 427px, 462px"
+                />
+                <source
+                  type="image/webp"
+                  srcset="assets/portfolio/thumbs/stylized-environment-sample2-640.webp 640w, assets/portfolio/thumbs/stylized-environment-sample2-1280.webp 1280w"
+                  sizes="(max-width: 620px) 427px, 462px"
+                />
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  width="1280"
+                  height="720"
+                  src="assets/portfolio/thumbs/stylized-environment-sample2-640.webp"
+                  alt="Stylized environment sample 2 with moody lighting and game-ready scenery"
+                />
+              </picture>
               <span>
                 <strong>Stylized environment sample 2</strong>
                 <small>Stylized environment</small>
@@ -195,21 +351,30 @@
               type="button"
               class="portfolio-item"
               data-lightbox-item
-              data-full="assets/portfolio/stylized-environment-sample3.webp"
-              data-thumb="assets/portfolio/thumbs/stylized-environment-sample3-1280.webp"
+              data-stem="assets/portfolio/thumbs/stylized-environment-sample3"
               data-caption="Stylized environment sample 3"
               data-category="Stylized environment"
             >
-              <img
-                loading="lazy"
-                decoding="async"
-                width="1280"
-                height="720"
-                src="assets/portfolio/thumbs/stylized-environment-sample3-640.webp"
-                srcset="assets/portfolio/thumbs/stylized-environment-sample3-640.webp 640w, assets/portfolio/thumbs/stylized-environment-sample3-1280.webp 1280w"
-                sizes="(max-width: 620px) 427px, 462px"
-                alt="Stylized environment sample 3 with fantasy game scene details"
-              />
+              <picture>
+                <source
+                  type="image/avif"
+                  srcset="assets/portfolio/thumbs/stylized-environment-sample3-640.avif 640w, assets/portfolio/thumbs/stylized-environment-sample3-1280.avif 1280w"
+                  sizes="(max-width: 620px) 427px, 462px"
+                />
+                <source
+                  type="image/webp"
+                  srcset="assets/portfolio/thumbs/stylized-environment-sample3-640.webp 640w, assets/portfolio/thumbs/stylized-environment-sample3-1280.webp 1280w"
+                  sizes="(max-width: 620px) 427px, 462px"
+                />
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  width="1280"
+                  height="720"
+                  src="assets/portfolio/thumbs/stylized-environment-sample3-640.webp"
+                  alt="Stylized environment sample 3 with fantasy game scene details"
+                />
+              </picture>
               <span>
                 <strong>Stylized environment sample 3</strong>
                 <small>Stylized environment</small>
@@ -219,21 +384,30 @@
               type="button"
               class="portfolio-item"
               data-lightbox-item
-              data-full="assets/portfolio/lowpoly-environment-sample1.webp"
-              data-thumb="assets/portfolio/thumbs/lowpoly-environment-sample1-1280.webp"
+              data-stem="assets/portfolio/thumbs/lowpoly-environment-sample1"
               data-caption="Low poly environment sample"
               data-category="Low poly environment"
             >
-              <img
-                loading="lazy"
-                decoding="async"
-                width="1280"
-                height="720"
-                src="assets/portfolio/thumbs/lowpoly-environment-sample1-640.webp"
-                srcset="assets/portfolio/thumbs/lowpoly-environment-sample1-640.webp 640w, assets/portfolio/thumbs/lowpoly-environment-sample1-1280.webp 1280w"
-                sizes="(max-width: 620px) 427px, 462px"
-                alt="Low poly environment sample with modular terrain and stylized vegetation"
-              />
+              <picture>
+                <source
+                  type="image/avif"
+                  srcset="assets/portfolio/thumbs/lowpoly-environment-sample1-640.avif 640w, assets/portfolio/thumbs/lowpoly-environment-sample1-1280.avif 1280w"
+                  sizes="(max-width: 620px) 427px, 462px"
+                />
+                <source
+                  type="image/webp"
+                  srcset="assets/portfolio/thumbs/lowpoly-environment-sample1-640.webp 640w, assets/portfolio/thumbs/lowpoly-environment-sample1-1280.webp 1280w"
+                  sizes="(max-width: 620px) 427px, 462px"
+                />
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  width="1280"
+                  height="720"
+                  src="assets/portfolio/thumbs/lowpoly-environment-sample1-640.webp"
+                  alt="Low poly environment sample with modular terrain and stylized vegetation"
+                />
+              </picture>
               <span>
                 <strong>Low poly environment</strong>
                 <small>Low poly environment</small>
@@ -243,21 +417,30 @@
               type="button"
               class="portfolio-item"
               data-lightbox-item
-              data-full="assets/portfolio/stylized-modular-structure.webp"
-              data-thumb="assets/portfolio/thumbs/stylized-modular-structure-1280.webp"
+              data-stem="assets/portfolio/thumbs/stylized-modular-structure"
               data-caption="Stylized modular structure"
               data-category="Modular structure"
             >
-              <img
-                loading="lazy"
-                decoding="async"
-                width="1280"
-                height="720"
-                src="assets/portfolio/thumbs/stylized-modular-structure-640.webp"
-                srcset="assets/portfolio/thumbs/stylized-modular-structure-640.webp 640w, assets/portfolio/thumbs/stylized-modular-structure-1280.webp 1280w"
-                sizes="(max-width: 620px) 427px, 462px"
-                alt="Stylized modular structure for game environments"
-              />
+              <picture>
+                <source
+                  type="image/avif"
+                  srcset="assets/portfolio/thumbs/stylized-modular-structure-640.avif 640w, assets/portfolio/thumbs/stylized-modular-structure-1280.avif 1280w"
+                  sizes="(max-width: 620px) 427px, 462px"
+                />
+                <source
+                  type="image/webp"
+                  srcset="assets/portfolio/thumbs/stylized-modular-structure-640.webp 640w, assets/portfolio/thumbs/stylized-modular-structure-1280.webp 1280w"
+                  sizes="(max-width: 620px) 427px, 462px"
+                />
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  width="1280"
+                  height="720"
+                  src="assets/portfolio/thumbs/stylized-modular-structure-640.webp"
+                  alt="Stylized modular structure for game environments"
+                />
+              </picture>
               <span>
                 <strong>Stylized modular structure</strong>
                 <small>Modular structure</small>
@@ -267,21 +450,30 @@
               type="button"
               class="portfolio-item"
               data-lightbox-item
-              data-full="assets/portfolio/low-poly-modular-structure.webp"
-              data-thumb="assets/portfolio/thumbs/low-poly-modular-structure-1280.webp"
+              data-stem="assets/portfolio/thumbs/low-poly-modular-structure"
               data-caption="Low poly modular structure"
               data-category="Modular structure"
             >
-              <img
-                loading="lazy"
-                decoding="async"
-                width="1280"
-                height="720"
-                src="assets/portfolio/thumbs/low-poly-modular-structure-640.webp"
-                srcset="assets/portfolio/thumbs/low-poly-modular-structure-640.webp 640w, assets/portfolio/thumbs/low-poly-modular-structure-1280.webp 1280w"
-                sizes="(max-width: 620px) 427px, 462px"
-                alt="Low poly modular structure for game environments"
-              />
+              <picture>
+                <source
+                  type="image/avif"
+                  srcset="assets/portfolio/thumbs/low-poly-modular-structure-640.avif 640w, assets/portfolio/thumbs/low-poly-modular-structure-1280.avif 1280w"
+                  sizes="(max-width: 620px) 427px, 462px"
+                />
+                <source
+                  type="image/webp"
+                  srcset="assets/portfolio/thumbs/low-poly-modular-structure-640.webp 640w, assets/portfolio/thumbs/low-poly-modular-structure-1280.webp 1280w"
+                  sizes="(max-width: 620px) 427px, 462px"
+                />
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  width="1280"
+                  height="720"
+                  src="assets/portfolio/thumbs/low-poly-modular-structure-640.webp"
+                  alt="Low poly modular structure for game environments"
+                />
+              </picture>
               <span>
                 <strong>Low poly modular structure</strong>
                 <small>Modular structure</small>
@@ -291,21 +483,30 @@
               type="button"
               class="portfolio-item"
               data-lightbox-item
-              data-full="assets/portfolio/stylized-skull.webp"
-              data-thumb="assets/portfolio/thumbs/stylized-skull-1280.webp"
+              data-stem="assets/portfolio/thumbs/stylized-skull"
               data-caption="Stylized skull"
               data-category="Prop"
             >
-              <img
-                loading="lazy"
-                decoding="async"
-                width="1280"
-                height="720"
-                src="assets/portfolio/thumbs/stylized-skull-640.webp"
-                srcset="assets/portfolio/thumbs/stylized-skull-640.webp 640w, assets/portfolio/thumbs/stylized-skull-1280.webp 1280w"
-                sizes="(max-width: 620px) 427px, 462px"
-                alt="Stylized skull prop for game environments"
-              />
+              <picture>
+                <source
+                  type="image/avif"
+                  srcset="assets/portfolio/thumbs/stylized-skull-640.avif 640w, assets/portfolio/thumbs/stylized-skull-1280.avif 1280w"
+                  sizes="(max-width: 620px) 427px, 462px"
+                />
+                <source
+                  type="image/webp"
+                  srcset="assets/portfolio/thumbs/stylized-skull-640.webp 640w, assets/portfolio/thumbs/stylized-skull-1280.webp 1280w"
+                  sizes="(max-width: 620px) 427px, 462px"
+                />
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  width="1280"
+                  height="720"
+                  src="assets/portfolio/thumbs/stylized-skull-640.webp"
+                  alt="Stylized skull prop for game environments"
+                />
+              </picture>
               <span>
                 <strong>Stylized skull</strong>
                 <small>Prop</small>
@@ -315,21 +516,30 @@
               type="button"
               class="portfolio-item"
               data-lightbox-item
-              data-full="assets/portfolio/stylized-rocks.webp"
-              data-thumb="assets/portfolio/thumbs/stylized-rocks-1280.webp"
+              data-stem="assets/portfolio/thumbs/stylized-rocks"
               data-caption="Stylized rocks"
               data-category="Prop"
             >
-              <img
-                loading="lazy"
-                decoding="async"
-                width="1280"
-                height="720"
-                src="assets/portfolio/thumbs/stylized-rocks-640.webp"
-                srcset="assets/portfolio/thumbs/stylized-rocks-640.webp 640w, assets/portfolio/thumbs/stylized-rocks-1280.webp 1280w"
-                sizes="(max-width: 620px) 427px, 462px"
-                alt="Stylized rocks prop for game environments"
-              />
+              <picture>
+                <source
+                  type="image/avif"
+                  srcset="assets/portfolio/thumbs/stylized-rocks-640.avif 640w, assets/portfolio/thumbs/stylized-rocks-1280.avif 1280w"
+                  sizes="(max-width: 620px) 427px, 462px"
+                />
+                <source
+                  type="image/webp"
+                  srcset="assets/portfolio/thumbs/stylized-rocks-640.webp 640w, assets/portfolio/thumbs/stylized-rocks-1280.webp 1280w"
+                  sizes="(max-width: 620px) 427px, 462px"
+                />
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  width="1280"
+                  height="720"
+                  src="assets/portfolio/thumbs/stylized-rocks-640.webp"
+                  alt="Stylized rocks prop for game environments"
+                />
+              </picture>
               <span>
                 <strong>Stylized rocks</strong>
                 <small>Prop</small>
@@ -550,7 +760,11 @@
         &lsaquo;
       </button>
       <figure class="lightbox-frame">
-        <img class="lightbox-image" data-lightbox-image alt="" decoding="async" />
+        <picture>
+          <source data-lightbox-avif type="image/avif" />
+          <source data-lightbox-webp type="image/webp" />
+          <img class="lightbox-image" data-lightbox-image alt="" decoding="async" />
+        </picture>
         <figcaption class="lightbox-caption">
           <strong data-lightbox-title></strong>
           <span data-lightbox-category></span>
@@ -576,7 +790,7 @@
       <p>&copy; <span id="year">2026</span> BluBluGames. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
 

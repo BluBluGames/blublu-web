@@ -1,13 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+>
   <url>
     <loc>https://blublu-web.web.app/</loc>
     <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://blublu-web.web.app/assets/portfolio/thumbs/stylized-environment-sample1-2000.webp</image:loc>
+      <image:title>Stylized environment sample 1</image:title>
+      <image:caption>Stylized environment by BluBluGames</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://blublu-web.web.app/assets/portfolio/thumbs/stylized-environment-sample2-2000.webp</image:loc>
+      <image:title>Stylized environment sample 2</image:title>
+      <image:caption>Stylized environment by BluBluGames</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://blublu-web.web.app/assets/portfolio/thumbs/stylized-environment-sample3-2000.webp</image:loc>
+      <image:title>Stylized environment sample 3</image:title>
+      <image:caption>Stylized environment by BluBluGames</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://blublu-web.web.app/assets/portfolio/thumbs/lowpoly-environment-sample1-2000.webp</image:loc>
+      <image:title>Low poly environment sample</image:title>
+      <image:caption>Low poly environment by BluBluGames</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://blublu-web.web.app/assets/portfolio/thumbs/stylized-modular-structure-2000.webp</image:loc>
+      <image:title>Stylized modular structure</image:title>
+      <image:caption>Modular structure by BluBluGames</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://blublu-web.web.app/assets/portfolio/thumbs/low-poly-modular-structure-2000.webp</image:loc>
+      <image:title>Low poly modular structure</image:title>
+      <image:caption>Modular structure by BluBluGames</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://blublu-web.web.app/assets/portfolio/thumbs/stylized-skull-2000.webp</image:loc>
+      <image:title>Stylized skull</image:title>
+      <image:caption>Prop by BluBluGames</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://blublu-web.web.app/assets/portfolio/thumbs/stylized-rocks-2000.webp</image:loc>
+      <image:title>Stylized rocks</image:title>
+      <image:caption>Prop by BluBluGames</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://blublu-web.web.app/privacy-policy</loc>
     <lastmod>2026-09-01</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 </urlset>
