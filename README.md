@@ -80,6 +80,10 @@ firebase deploy --only hosting             # production
 - After attaching a custom domain, update the URLs in `robots.txt`, `sitemap.xml`, and the
   `og:url` / `og:image` / canonical / JSON-LD tags in `index.html`.
 - There is no `404.html`, so unknown paths fall back to Firebase's generic error page.
+- Hosting `headers` rules match the *request* path, not the file on disk. Because `cleanUrls`
+  is on, visitors request `/` and `/privacy-policy`, which do not match `**/*.html` - so each
+  page needs its own no-cache rule in `firebase.json`. Add one when adding a page, or it will
+  inherit Firebase's default `max-age=3600` and go stale for an hour after a deploy.
 
 ## Offer scope
 
