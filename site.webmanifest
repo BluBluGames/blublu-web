@@ -1,0 +1,13 @@
+{
+  "name": "BluBluGames",
+  "short_name": "BluBluGames",
+  "description": "Custom low poly and stylized 3D assets for indie games.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080b0a",
+  "theme_color": "#080b0a",
+  "icons": [
+    { "src": "/assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/icons/blublu-logo-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

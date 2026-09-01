@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://blublu-web.web.app/sitemap.xml

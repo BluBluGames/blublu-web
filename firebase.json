@@ -4,17 +4,34 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": "dist/blublu-web/browser",
+    "site": "blublu-web",
+    "public": ".",
     "ignore": [
       "firebase.json",
+      ".firebaserc",
       "**/.*",
-      "**/node_modules/**"
+      "**/node_modules/**",
+      "studio-strategy/**",
+      "tools/**",
+      "firestore.rules",
+      "firestore.indexes.json",
+      "storage.rules",
+      "README.md",
+      "assets/hero/hero-img.webp"
     ],
-    "rewrites": [
+    "cleanUrls": true,
+    "headers": [
       {
-        "source": "**",
-        "function": "ssr",
-        "destination": "/index.html"
+        "source": "**/*.@(webp|png|jpg|jpeg|svg|ico)",
+        "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+      },
+      {
+        "source": "**/*.@(css|js)",
+        "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600" }]
+      },
+      {
+        "source": "**/*.@(html|webmanifest)",
+        "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }]
       }
     ]
   },
